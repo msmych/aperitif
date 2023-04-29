@@ -1,6 +1,7 @@
 brew install gh
 brew install gradle
 brew install openjdk
+brew install tree
 
 brew install --cask discord
 brew install --cask ilya-birman-typography-layout

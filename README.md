@@ -9,5 +9,5 @@ chmod +x brew_install.sh
 
 ### Vim
 ```
-cp Vim/vim_config ~/.vimrc
+cp Vim/config.vim ~/.vimrc
 ```

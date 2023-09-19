@@ -1,5 +1,12 @@
 # Apéritif
 
+## Neovim
+
+Install Neovim:
+```
+brew install neovim
+```
+
 ### Homebrew
 ```
 cd Homebrew

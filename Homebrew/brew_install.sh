@@ -1,7 +1,10 @@
 brew install gh
 brew install gradle
+brew install neovim
+brew install node
 brew install openjdk
 brew install tree
+brew install yarn
 
 brew install --cask discord
 brew install --cask garmin-express

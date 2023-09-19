@@ -3,6 +3,7 @@ brew install gradle
 brew install neovim
 brew install node
 brew install openjdk
+brew install ripgrep
 brew install tree
 brew install yarn
 

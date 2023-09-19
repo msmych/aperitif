@@ -7,6 +7,11 @@ Install Neovim:
 brew install neovim
 ```
 
+Copy configs:
+```
+cp -r Nvim ~/.config/nvim
+```
+
 ### Homebrew
 ```
 cd Homebrew

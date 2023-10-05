@@ -40,6 +40,8 @@ local plugins = {
   'simrat39/rust-tools.nvim',
   'mfussenegger/nvim-dap',
   'rcarriga/nvim-dap-ui',
+  'mbbill/undotree',
+  'tpope/vim-fugitive',
 }
 
 require("lazy").setup(plugins, {})

@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, {})

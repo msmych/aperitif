@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 -- Ensure Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -13,35 +15,35 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- themes
   'navarasu/onedark.nvim',
-  {
-    { 'rose-pine/neovim', name = 'rose-pine' }
-  },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons'
     }
   },
-  'nvim-treesitter/nvim-treesitter',
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
-  'neovim/nvim-lspconfig',
-  'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-nvim-lsp',
+  'nvim-treesitter/nvim-treesitter',
   'L3MON4D3/LuaSnip',
-  'saadparwaiz1/cmp_luasnip',
-  'rafamadriz/friendly-snippets',
-  'simrat39/rust-tools.nvim',
-  'mfussenegger/nvim-dap',
-  'rcarriga/nvim-dap-ui',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/nvim-cmp',
   'mbbill/undotree',
+  'mfussenegger/nvim-dap',
+  'neovim/nvim-lspconfig',
+  'rafamadriz/friendly-snippets',
+  'rcarriga/nvim-dap-ui',
+  'saadparwaiz1/cmp_luasnip',
+  'simrat39/rust-tools.nvim',
   'tpope/vim-fugitive',
+  'williamboman/mason-lspconfig.nvim',
+  'williamboman/mason.nvim',
 }
 
 require("lazy").setup(plugins, {})

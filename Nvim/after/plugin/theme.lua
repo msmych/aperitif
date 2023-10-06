@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 -- require('rose-pine').setup {
 --   variant = 'moon',
 -- }

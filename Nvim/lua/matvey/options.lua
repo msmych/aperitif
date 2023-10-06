@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 vim.o.hlsearch = false
 vim.opt.incsearch = true
 
@@ -30,7 +32,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+-- vim.opt.colorcolumn = "100"
 
 -- Netrw
 vim.g.netrw_banner = 0

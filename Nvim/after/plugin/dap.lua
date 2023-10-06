@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 require("dapui").setup()
 local dap = require("dap")
 local dapui = require("dapui")

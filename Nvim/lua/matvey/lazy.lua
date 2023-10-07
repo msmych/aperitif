@@ -20,12 +20,6 @@ local plugins = {
   { 'rose-pine/neovim', name = 'rose-pine' },
 
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons'
-    }
-  },
-  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim' }
@@ -44,6 +38,7 @@ local plugins = {
   'tpope/vim-fugitive',
   'williamboman/mason-lspconfig.nvim',
   'williamboman/mason.nvim',
+  'nvim-tree/nvim-web-devicons'
 }
 
 require("lazy").setup(plugins, {})

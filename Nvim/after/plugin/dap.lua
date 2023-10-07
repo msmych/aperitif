@@ -18,4 +18,6 @@ end
 
 vim.keymap.set('n', '<leader>dt', ':DapToggleBreakpoint<CR>')
 vim.keymap.set('n', '<leader>dx', ':DapTerminate<CR>')
-vim.keymap.set('n', '<leader>do', ':DapStepOver<CR>')
+vim.keymap.set('n', '<F7>', ':DapStepInto<CR>')
+vim.keymap.set('n', '<F8>', ':DapStepOver<CR>')
+vim.keymap.set('n', '<F9>', ':DapContinue<CR>')

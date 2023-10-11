@@ -1,0 +1,27 @@
+window:
+  padding:
+    x: 5
+    y: 5
+  opacity: 0.93
+  startup_mode: Fullscreen
+  dynamic_title: true
+  option_as_alt: OnlyLeft
+font:
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+    style: Regular
+  italic:
+    family: JetBrainsMono Nerd Font Mono
+    style: Italic
+  bold:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold
+  bold_italic:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold Italic
+  size: 14
+selection:
+  save_to_clipboard: true
+key_bindings:
+  - { key: Right, mods: Alt, chars: "\x1BF" }
+  - { key: Left,  mods: Alt, chars: "\x1BB" }

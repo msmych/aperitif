@@ -2,11 +2,15 @@
 
 vim.o.hlsearch = false
 vim.opt.incsearch = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 vim.wo.number = true
 vim.o.relativenumber = true
 
 vim.o.mouse = 'a'
+
+vim.o.clipboard = 'unnamedplus'
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -30,9 +34,10 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
--- vim.opt.colorcolumn = "100"
+vim.o.completeopt = 'menuone,noselect'
 
 -- Netrw
 vim.g.netrw_banner = 0

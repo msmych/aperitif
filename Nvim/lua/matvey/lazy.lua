@@ -1,44 +1,92 @@
 ---@diagnostic disable: undefined-global
 
--- Ensure Lazy
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+  vim.fn.system {
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
-  })
+  }
 end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  -- themes
-  'navarasu/onedark.nvim',
+
+  -- Theme
   { 'rose-pine/neovim', name = 'rose-pine' },
 
+
+  -- Undo
+  'mbbill/undotree',
+
+  -- Git
+  'tpope/vim-fugitive',
+  {
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      }
+    }
+  },
+
+  -- Search
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.3',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    branch = '0.1.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+        cond = function()
+          return vim.fn.executable 'make' == 1
+        end,
+      },
+    },
   },
-  'nvim-treesitter/nvim-treesitter',
-  'L3MON4D3/LuaSnip',
+
+  -- Syntax
+  {
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    build = ':TSUpdate',
+  },
+
+  -- LSP
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      { 'j-hui/fidget.nvim', opts = {} },
+
+      'folke/neodev.nvim',
+    },
+  },
   'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/nvim-cmp',
-  'mbbill/undotree',
-  'mfussenegger/nvim-dap',
-  'neovim/nvim-lspconfig',
-  'rafamadriz/friendly-snippets',
-  'rcarriga/nvim-dap-ui',
-  'saadparwaiz1/cmp_luasnip',
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'rafamadriz/friendly-snippets',
+    },
+  },
+
+  -- Rust
   'simrat39/rust-tools.nvim',
-  'tpope/vim-fugitive',
-  'williamboman/mason-lspconfig.nvim',
-  'williamboman/mason.nvim',
-  'nvim-tree/nvim-web-devicons'
 }
 
-require("lazy").setup(plugins, {})
+require('lazy').setup(plugins, {})

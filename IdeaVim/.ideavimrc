@@ -1,9 +1,10 @@
 set nu
 set relativenumber
 
-let g:mapleader=" "
+set scrolloff=8
+set clipboard=unnamedplus
 
-nmap <leader>rl :action Run<CR>
+let g:mapleader=" "
 
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
@@ -12,6 +13,8 @@ nmap J mzJ`z
 
 nmap <C-d> <C-d>zz
 nmap <C-u> <C-u>zz
+nmap <C-f> <C-f>zz
+nmap <C-b> <C-b>zz
 nmap n nzzzv
 nmap N Nzzzv
 
@@ -24,4 +27,3 @@ vmap <leader>y \"+y
 nmap <leader>Y \"+Y
 
 imap <C-c> <Esc>
-

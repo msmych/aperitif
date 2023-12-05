@@ -85,6 +85,10 @@ local plugins = {
     },
   },
 
+  -- Debug
+  'mfussenegger/nvim-dap',
+  'rcarriga/nvim-dap-ui',
+
   -- Rust
   'simrat39/rust-tools.nvim',
 }

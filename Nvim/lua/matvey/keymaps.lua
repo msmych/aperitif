@@ -25,3 +25,5 @@ vim.keymap.set('v', '<leader>d', "\"_d")
 vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
+
+vim.keymap.set('n', '<leader><F2>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })

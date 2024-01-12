@@ -15,8 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 
-  -- Theme
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  -- Themes
+  { 'rose-pine/neovim',      name = 'rose-pine' },
+  { 'navarasu/onedark.nvim', name = 'onedark' },
 
 
   -- Undo
@@ -28,10 +29,10 @@ local plugins = {
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
+        add          = { text = '+' },
+        change       = { text = '~' },
+        delete       = { text = '_' },
+        topdelete    = { text = '‾' },
         changedelete = { text = '~' },
         untracked    = { text = '┆' },
       }

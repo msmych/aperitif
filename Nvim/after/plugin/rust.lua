@@ -29,7 +29,7 @@ rt.setup {
       vim.keymap.set('n', '<leader>l', function()
         vim.lsp.buf.format()
       end)
-      vim.keymap.set('n', '<leader>R', rt.hover_actions.hover_actions, { buffer = bufnr })
+      vim.keymap.set('n', '<leader>r', rt.hover_actions.hover_actions, { buffer = bufnr })
     end
   },
   tools = {

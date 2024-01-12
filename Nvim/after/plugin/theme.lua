@@ -1,5 +1,7 @@
 ---@diagnostic disable: undefined-global
 
+-- require('onedark').load()
+
 require('rose-pine').setup {
   variant = 'moon',
   disable_italics = true,
@@ -7,11 +9,28 @@ require('rose-pine').setup {
 
 vim.cmd [[ colorscheme rose-pine ]]
 
-vim.api.nvim_set_hl(0, "Normal", { bg = 'none' })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = 'none' })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = 'none' })
-vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = 'none' })
-vim.api.nvim_set_hl(0, "CursorLine", { bg = 'none' })
-vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = 'none' })
-vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = 'none' })
-vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = 'none' })
+local hl_groups = {
+  'Normal',
+  'NormalNC',
+  'SignColumn',
+  'EndOfBuffer',
+
+  'TelescopeNormal',
+  'TelescopeBorder',
+  'TelescopePromptNormal',
+
+  'DiffAdd',
+  'GitSignsAdd',
+  'DiffChange',
+  'GitSignsChange',
+  'DiffDelete',
+  'GitSignsDelete',
+  'GitSignsTopdelete',
+  'GitSignsChangedelete',
+}
+
+for _, hl_group in ipairs(hl_groups) do
+  vim.api.nvim_command("highlight " .. hl_group .. " guibg=none")
+end
+
+vim.api.nvim_command("highlight link debugPC CursorLine")

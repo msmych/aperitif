@@ -1,6 +1,9 @@
 set nu
 set relativenumber
 
+set visualbell
+set noerrorbells
+
 set scrolloff=8
 set clipboard=unnamedplus
 

@@ -29,4 +29,10 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader><F2>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
 vim.keymap.set('n', 'nt', ':tabnew<CR>')
-vim.keymap.set('n', 'ns', ':vsplit<CR>')
+vim.keymap.set('n', 'nv', ':vsplit<CR>')
+vim.keymap.set('n', 'nh', ':split<CR>')
+
+vim.keymap.set('n', '<leader><right>', '<C-w>6>')
+vim.keymap.set('n', '<leader><left>', '<C-w>6<')
+vim.keymap.set('n', '<leader><up>', '<C-w>4+')
+vim.keymap.set('n', '<leader><down>', '<C-w>4-')

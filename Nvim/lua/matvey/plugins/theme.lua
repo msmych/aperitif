@@ -22,11 +22,8 @@ return {
         'TelescopeBorder',
         'TelescopePromptNormal',
 
-        'DiffAdd',
         'GitSignsAdd',
-        'DiffChange',
         'GitSignsChange',
-        'DiffDelete',
         'GitSignsDelete',
         'GitSignsTopdelete',
         'GitSignsChangedelete',

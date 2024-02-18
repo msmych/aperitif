@@ -77,10 +77,13 @@ return {
           previewer = false,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
-      vim.keymap.set('n', '<leader>o', find_files_git_root, { desc = 'Search files' })
+      vim.keymap.set('n', '<leader>o', find_files_git_root, { desc = 'Search files in git root' })
+      vim.keymap.set('n', '<leader>.o', builtin.find_files, { desc = 'Search files' })
       vim.keymap.set('n', '<leader>f', live_grep_git_root, { desc = 'Search by grep on git root' })
-      vim.keymap.set('n', '<leader>6', require('telescope.builtin').diagnostics, { desc = 'Search diagnostics' })
-      vim.keymap.set('n', '<leader><space>', require('telescope.builtin').resume, { desc = 'Search resume' })
+      vim.keymap.set('n', '<leader>.f', builtin.live_grep, { desc = 'Search by grep' })
+      vim.keymap.set('n', '<leader>6', builtin.diagnostics, { desc = 'Search diagnostics' })
+      vim.keymap.set('n', '<leader><space>', builtin.resume, { desc = 'Search resume' })
+      vim.keymap.set('n', '<leader>?', builtin.help_tags, { desc = 'Search help' })
     end
   },
 

@@ -12,7 +12,7 @@ local keymaps = function(bufnr)
   vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_dynamic_workspace_symbols,
     opts(bufnr, 'Workspace symbols'))
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts(bufnr, 'Hover documentation'))
-  vim.keymap.set('n', '<leader>p', vim.lsp.buf.signature_help, opts(bufnr, 'Signature documentation'))
+  vim.keymap.set('i', '<C-p>', vim.lsp.buf.signature_help, opts(bufnr, 'Signature documentation'))
   vim.keymap.set('i', '<C-l>', function()
     vim.lsp.buf.format()
   end, opts(bufnr, 'Format'))

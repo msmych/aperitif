@@ -1,18 +1,24 @@
 ---@diagnostic disable: undefined-global
 
-local opts = { buffer = bufnr, remap = false }
+local opts = function(bufnr, desc) return { buffer = bufnr, remap = false, desc = 'LSP: ' .. desc } end
 
-local keymaps = function()
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-  vim.keymap.set('n', '<leader><F6>', vim.lsp.buf.rename, opts)
-  vim.keymap.set('n', '<leader><CR>', vim.lsp.buf.code_action, opts)
+local keymaps = function(bufnr)
+  vim.keymap.set('n', '<leader><F6>', vim.lsp.buf.rename, opts(bufnr, 'Rename'))
+  vim.keymap.set('n', '<leader><CR>', vim.lsp.buf.code_action, opts(bufnr, 'Code action'))
+  vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, opts(bufnr, 'Go to definition'))
+  vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts(bufnr, 'Go to references'))
+  vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations, opts(bufnr, 'Go to implementations'))
+  vim.keymap.set('n', '<leader><F12>', require('telescope.builtin').lsp_document_symbols, opts(bufnr, 'Document symbols'))
+  vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_dynamic_workspace_symbols,
+    opts(bufnr, 'Workspace symbols'))
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts(bufnr, 'Hover documentation'))
+  vim.keymap.set('n', '<leader>p', vim.lsp.buf.signature_help, opts(bufnr, 'Signature documentation'))
   vim.keymap.set('i', '<C-l>', function()
     vim.lsp.buf.format()
-  end)
+  end, opts(bufnr, 'Format'))
   vim.keymap.set('n', '<leader>l', function()
     vim.lsp.buf.format()
-  end)
+  end, opts(bufnr, 'Format'))
 end
 
 return {
@@ -33,11 +39,17 @@ return {
       local mason_lspconfig = require('mason-lspconfig')
 
       local on_attach = function(_, bufnr)
-        keymaps()
+        keymaps(bufnr)
       end
 
       local servers = {
-        lua_ls = {},
+        lua_ls = {
+          Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+            diagnostics = { disable = { 'missing-fields' } },
+          }
+        },
         rust_analyzer = {},
         tsserver = {},
         eslint = {},
@@ -57,9 +69,17 @@ return {
           require('lspconfig')[server_name].setup {
             capabilities = capabilities,
             on_attach = on_attach,
+            settings = servers[server_name],
           }
         end
       }
+    end
+  },
+
+  {
+    'folke/neodev.nvim',
+    config = function()
+      require('neodev').setup()
     end
   },
 
@@ -86,7 +106,7 @@ return {
         server = {
           capabilities = capabilities,
           on_attach = function(_, bufnr)
-            keymaps()
+            keymaps(bufnr)
             vim.keymap.set('n', '<leader>r', rt.hover_actions.hover_actions, { buffer = bufnr })
           end
         },

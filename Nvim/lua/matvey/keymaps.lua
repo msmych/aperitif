@@ -3,6 +3,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
 vim.keymap.set('n', '<leader>1', vim.cmd.Ex)
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
@@ -26,7 +28,9 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 
-vim.keymap.set('n', '<leader><F2>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', ']e', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '[e', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', '<leader><F1>', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 
 vim.keymap.set('n', 'nt', ':tabnew<CR>')
 vim.keymap.set('n', 'nv', ':vsplit<CR>')

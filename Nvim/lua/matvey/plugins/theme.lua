@@ -10,7 +10,7 @@ return {
         variant = 'moon',
         disable_italics = true,
       }
-      vim.cmd [[ colorscheme rose-pine ]]
+      vim.cmd.colorscheme 'rose-pine'
 
       local hl_groups = {
         'Normal',
@@ -37,5 +37,21 @@ return {
     end
   },
 
-  { 'navarasu/onedark.nvim', name = 'onedark', enabled = false, }
+  { 'navarasu/onedark.nvim', name = 'onedark', enabled = false, },
+
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    opts = {
+      indent = {
+        char = ' ',
+      },
+      scope = {
+        char = '┆',
+        show_exact_scope = false,
+        show_start = false,
+        show_end = false,
+      }
+    },
+  }
 }

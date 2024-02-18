@@ -9,6 +9,9 @@ set clipboard=unnamedplus
 
 let g:mapleader=" "
 
+nmap <Space> <Nop>
+vmap <Space> <Nop>
+
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
 
@@ -18,6 +21,7 @@ nmap <C-d> <C-d>zz
 nmap <C-u> <C-u>zz
 nmap <C-f> <C-f>zz
 nmap <C-b> <C-b>zz
+
 nmap n nzzzv
 nmap N Nzzzv
 

@@ -84,6 +84,7 @@ return {
       vim.keymap.set('n', '<leader>6', builtin.diagnostics, { desc = 'Search diagnostics' })
       vim.keymap.set('n', '<leader><space>', builtin.resume, { desc = 'Search resume' })
       vim.keymap.set('n', '<leader>?', builtin.help_tags, { desc = 'Search help' })
+      vim.keymap.set('n', '<leader>kf', builtin.keymaps, { desc = 'Search keymaps' })
     end
   },
 

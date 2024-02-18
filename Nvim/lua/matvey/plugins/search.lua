@@ -58,14 +58,14 @@ return {
       local function live_grep_git_root()
         local git_root = find_git_root()
         if git_root then
-          builtin.live_grep({ search_dirs = { git_root } })
+          builtin.live_grep({ search_dirs = { git_root }, hidden = true, file_ignore_patterns = { '.git', 'node_modules' } })
         end
       end
 
       local function find_files_git_root()
         local git_root = find_git_root()
         if git_root then
-          builtin.find_files({ search_dirs = { git_root } })
+          builtin.find_files({ search_dirs = { git_root }, hidden = true, file_ignore_patterns = { '.git', 'node_modules' } })
         end
       end
 

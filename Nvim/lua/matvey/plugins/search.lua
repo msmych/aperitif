@@ -14,6 +14,7 @@ return {
           return vim.fn.executable 'make' == 1
         end,
       },
+      'nvim-telescope/telescope-file-browser.nvim',
     },
     config = function()
       local builtin = require('telescope.builtin')
@@ -28,9 +29,14 @@ return {
             },
           },
         },
+        extensions = {
+          file_browser = {
+          }
+        },
       }
 
       pcall(require('telescope').load_extension, 'fzf')
+      require("telescope").load_extension "file_browser"
 
       local function find_git_root()
         -- Use the current buffer's path as the starting point for the git search
@@ -82,6 +88,7 @@ return {
       vim.keymap.set('n', '<leader>.o', builtin.find_files, { desc = 'Search files' })
       vim.keymap.set('n', '<leader>f', live_grep_git_root, { desc = 'Search by grep on git root' })
       vim.keymap.set('n', '<leader>.f', builtin.live_grep, { desc = 'Search by grep' })
+      vim.keymap.set('n', '<leader>1', ':Telescope file_browser<CR>', { desc = 'File browser' })
       vim.keymap.set('n', '<leader>6', builtin.diagnostics, { desc = 'Search diagnostics' })
       vim.keymap.set('n', '<leader><space>', builtin.resume, { desc = 'Search resume' })
       vim.keymap.set('n', '<leader>?', builtin.help_tags, { desc = 'Search help' })

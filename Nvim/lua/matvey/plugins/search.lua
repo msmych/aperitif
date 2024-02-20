@@ -31,6 +31,7 @@ return {
         },
         extensions = {
           file_browser = {
+            theme = 'ivy'
           }
         },
       }
@@ -76,6 +77,10 @@ return {
         end
       end
 
+      vim.keymap.set('n', '<leader>1', ':Telescope file_browser<CR>', { desc = 'File browser' })
+      vim.keymap.set('n', '<leader>2', builtin.marks, { desc = 'Search marks' })
+      vim.keymap.set('n', '<leader>6', builtin.diagnostics, { desc = 'Search errors' })
+
       vim.keymap.set('n', '<leader>e', builtin.oldfiles, { desc = 'Find recently opened files' })
       vim.keymap.set('n', '<leader><Tab>', builtin.buffers, { desc = 'Find existing buffers' })
       vim.keymap.set('n', '<leader>/', function()
@@ -88,8 +93,7 @@ return {
       vim.keymap.set('n', '<leader>.o', builtin.find_files, { desc = 'Search files' })
       vim.keymap.set('n', '<leader>f', live_grep_git_root, { desc = 'Search by grep on git root' })
       vim.keymap.set('n', '<leader>.f', builtin.live_grep, { desc = 'Search by grep' })
-      vim.keymap.set('n', '<leader>1', ':Telescope file_browser<CR>', { desc = 'File browser' })
-      vim.keymap.set('n', '<leader>6', builtin.diagnostics, { desc = 'Search diagnostics' })
+      vim.keymap.set('n', '<leader>sf', function() builtin.grep_string({ search = vim.fn.input("/? ") }) end, { desc = 'Search for string' })
       vim.keymap.set('n', '<leader><space>', builtin.resume, { desc = 'Search resume' })
       vim.keymap.set('n', '<leader>?', builtin.help_tags, { desc = 'Search help' })
       vim.keymap.set('n', '<leader>kf', builtin.keymaps, { desc = 'Search keymaps' })

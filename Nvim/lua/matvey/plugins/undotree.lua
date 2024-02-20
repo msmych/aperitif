@@ -1,11 +1,11 @@
 ---@diagnostic disable: undefined-global
 
 return {
-  -- Undo
+  -- UndoTree
   {
     'mbbill/undotree',
     config = function()
-      vim.keymap.set('n', '<leader>7', vim.cmd.UndotreeToggle)
+      vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
     end
   },
 }

@@ -3,12 +3,13 @@
 local opts = function(bufnr, desc) return { buffer = bufnr, remap = false, desc = 'LSP: ' .. desc } end
 
 local keymaps = function(bufnr)
+  vim.keymap.set('n', '<leader>7', require('telescope.builtin').lsp_document_symbols, opts(bufnr, 'Document symbols'))
+
   vim.keymap.set('n', '<leader><F6>', vim.lsp.buf.rename, opts(bufnr, 'Rename'))
   vim.keymap.set('n', '<leader><CR>', vim.lsp.buf.code_action, opts(bufnr, 'Code action'))
   vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, opts(bufnr, 'Go to definition'))
   vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts(bufnr, 'Go to references'))
   vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations, opts(bufnr, 'Go to implementations'))
-  vim.keymap.set('n', '<leader><F12>', require('telescope.builtin').lsp_document_symbols, opts(bufnr, 'Document symbols'))
   vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_dynamic_workspace_symbols,
     opts(bufnr, 'Workspace symbols'))
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts(bufnr, 'Hover documentation'))

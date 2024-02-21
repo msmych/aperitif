@@ -1,31 +1,23 @@
 # Apéritif
 
-## Neovim
+## NeoVim
 
-Install Neovim:
-```shell
-brew install neovim
+Prepare:
+
+```bash
+cd NeoVim
+chmod +x import.sh
+chmod +x export.sh
 ```
 
-Copy configs:
-```shell
-cp -r Nvim/* ~/.config/nvim
+Import configs:
+
+```bash
+APERITIF=/path/to/here ./import.sh
 ```
 
-Update Aperitif:
-```shell
-cp -r ~/.config/nvim Nvim
-```
+Export configs:
 
-### Homebrew
-```shell
-cd Homebrew
-chmod +x brew_install.sh
-./brew_install.sh
-```
-
-### Vim
-```shell
-cp Vim/config.vim ~/.vimrc
-git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
+```bash
+APERITIF=/path/to/here ./export.sh
 ```

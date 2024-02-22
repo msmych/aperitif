@@ -31,4 +31,3 @@ vim.keymap.set('n', '<C-b>', "<C-b>zz")
 -- Re-center on search
 vim.keymap.set('n', 'n', "nzzzv")
 vim.keymap.set('n', 'N', "Nzzzv")
-

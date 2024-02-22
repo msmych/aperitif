@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source_dir="$APERITIF/NeoVim"
+source_dir="$APERITIF/NeoVim/config"
 target_dir="$HOME/.config/nvim"
 
 rm -r "$target_dir"/*

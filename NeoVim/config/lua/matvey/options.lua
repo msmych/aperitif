@@ -35,16 +35,8 @@ vim.opt.wrap = false
 -- Keep some distance from the top / bottom
 vim.opt.scrolloff = 8
 
-vim.o.termguicolors = true
-
 -- Show command
 vim.opt.showcmd = true
-
--- Show sign column
-vim.opt.signcolumn = "yes"
-
--- Some fix
-vim.opt.isfname:append("@-@")
 
 -- No swapfile, no backup, use undo
 vim.opt.swapfile = false

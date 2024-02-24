@@ -19,6 +19,11 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', "\"_d", { desc = 'Delete and keep clip
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 
+-- errors
+vim.keymap.set('n', ']e', vim.diagnostic.goto_next, { desc = 'Go to next error' })
+vim.keymap.set('n', '[e', vim.diagnostic.goto_prev, { desc = 'Go to previous error' })
+vim.keymap.set('n', '<leader><F1>', vim.diagnostic.open_float, { desc = 'Show error message' })
+
 -- <C-c> is more convenient than <Esc>
 vim.keymap.set('i', '<C-c>', '<Esc>')
 

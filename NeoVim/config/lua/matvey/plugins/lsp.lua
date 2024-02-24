@@ -23,7 +23,9 @@ return {
             diagnostics = { disable = { 'missing-fields' } },
             completion = { callSnippet = 'Replace' }
           }
-        }
+        },
+        eslint = {},
+        tsserver = {},
       }
 
       mason_lspconfig.setup {

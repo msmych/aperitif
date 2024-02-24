@@ -19,6 +19,7 @@ return {
             path = '%:p:h',
             select_buffer = true,
             hijack_netrw = true,
+            initial_mode = 'normal',
           }
         }
       }
@@ -32,10 +33,12 @@ return {
       local utils = require('matvey.utils')
 
       vim.keymap.set('n', '<leader>1', file_browser.file_browser, { desc = 'Open file browser' })
-      vim.keymap.set('n', '<leader><Tab>', builtin.buffers, { desc = 'Search buffers' })
+      vim.keymap.set('n', '<leader><Tab>', function() builtin.buffers { initial_mode = 'normal' } end,
+        { desc = 'Search buffers' })
       vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
       vim.keymap.set('n', '<leader>2', builtin.marks, { desc = 'Search marks' })
-      vim.keymap.set('n', '<leader>6', builtin.diagnostics, { desc = 'Search errors' })
+      vim.keymap.set('n', '<leader>6', function() builtin.diagnostics { initial_mode = 'normal' } end,
+        { desc = 'Search errors' })
       vim.keymap.set('n', '<leader>9', builtin.git_commits, { desc = 'Search Git commits' })
       vim.keymap.set('n', '<leader>o', function()
         if utils.find_git_root() ~= nil then
@@ -49,7 +52,6 @@ return {
       end, { desc = 'Search Git files' })
       vim.keymap.set('n', '<leader>O', function()
         builtin.find_files {
-          cwd = utils.find_git_root(),
           hidden = true,
           file_ignore_patterns = { '.git/', 'node_modules/' },
         }

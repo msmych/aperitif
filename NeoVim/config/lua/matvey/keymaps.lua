@@ -14,7 +14,7 @@ vim.keymap.set('n', '<leader><up>', '<C-w>4+', { desc = '[+] Window height' })
 vim.keymap.set('n', '<leader><down>', '<C-w>4-', { desc = '[-] Window height' })
 
 vim.keymap.set('x', '<leader>p', "\"_dP", { desc = 'Paste and keep clipboard value' })
-vim.keymap.set({ 'n', 'v' }, '<leader>d', "\"_d", { desc = 'Delete and keep clipboard value' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>d', "\"_d", { desc = 'Delete and keep clipboard value' })
 
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })

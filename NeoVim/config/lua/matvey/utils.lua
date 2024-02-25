@@ -35,8 +35,7 @@ M.lsp_keymaps = function(bufnr)
     { buffer = bufnr, remap = false, desc = 'LSP: document symbols' })
   vim.keymap.set('n', 'gd', telescope.lsp_definitions,
     { buffer = bufnr, remap = false, desc = 'LSP: go to definition' })
-  vim.keymap.set('n', 'gD', telescope.lsp_type_definitions,
-    { buffer = bufnr, remap = false, desc = 'LSP: go to type' })
+  vim.keymap.set('n', 'gD', telescope.lsp_type_definitions, { buffer = bufnr, remap = false, desc = 'LSP: go to type' })
   vim.keymap.set('n', 'gr', telescope.lsp_references,
     { buffer = bufnr, remap = false, desc = 'LSP: search references' })
   vim.keymap.set('n', 'gi', telescope.lsp_implementations,

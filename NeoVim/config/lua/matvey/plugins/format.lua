@@ -13,15 +13,16 @@ return {
             local group = vim.api.nvim_create_augroup('LspFormatOnSave', { clear = false })
             vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
 
-            vim.api.nvim_create_autocmd(
-              'BufWritePre', {
-                buffer = bufnr,
-                group = group,
-                callback = function()
-                  vim.lsp.buf.format({ bufnr = bufnr, async = false })
-                end,
-                desc = 'Format on save'
-              })
+            local event = 'BufWritePre' -- BufWritePre or BufWritePost
+            local async = event == 'BufWritePost'
+            vim.api.nvim_create_autocmd(event, {
+              buffer = bufnr,
+              group = group,
+              callback = function()
+                vim.lsp.buf.format({ bufnr = bufnr, async = async })
+              end,
+              desc = 'Format on save'
+            })
           end
 
           if client.supports_method("textDocument/rangeFormatting") then

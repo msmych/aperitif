@@ -20,6 +20,12 @@ return {
         'TelescopeNormal',
         'TelescopeBorder',
         'TelescopePromptNormal',
+
+        -- 'GitSignsAdd',
+        -- 'GitSignsChange',
+        -- 'GitSignsDelete',
+        -- 'GitSignsTopdelete',
+        -- 'GitSignsChangedelete',
       }
 
       for _, hl_group in ipairs(hl_groups) do

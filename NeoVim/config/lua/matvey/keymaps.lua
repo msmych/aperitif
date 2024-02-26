@@ -5,8 +5,8 @@ vim.g.maplocalleader = ' '
 -- Do nothing on single space
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Write' })
-vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Close current buffer' })
 
 vim.keymap.set('n', '<leader><right>', '<C-w>6>', { desc = '[+] Window width' })
 vim.keymap.set('n', '<leader><left>', '<C-w>6<', { desc = '[-] Window width' })

@@ -33,5 +33,6 @@ return {
         vim.keymap.set('n', '<leader>z', gs.reset_buffer, { buffer = bufnr, desc = 'Git reset buffer' })
       end
     }
-  }
+  },
+  'mbbill/undotree',
 }

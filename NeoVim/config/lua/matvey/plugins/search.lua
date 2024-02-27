@@ -54,7 +54,7 @@ return {
       vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
       vim.keymap.set('n', '<leader>1', file_browser.file_browser, { desc = 'Open file browser' })
       vim.keymap.set('n', '<leader>2', builtin.marks, { desc = 'Search marks' })
-      vim.keymap.set('n', '<leader>6', builtin.diagnostics, { desc = 'Search errors' })
+      vim.keymap.set('n', '<leader>^', builtin.diagnostics, { desc = 'Search errors' })
       vim.keymap.set('n', '<leader>9', builtin.git_commits, { desc = 'Search Git commits' })
       vim.keymap.set('n', '<leader>o', function()
         if utils.find_git_root() ~= nil then

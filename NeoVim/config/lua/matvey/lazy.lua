@@ -11,4 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('matvey.plugins')
+require('lazy').setup {
+
+  { import = 'matvey.plugins' },
+
+  { 'numToStr/Comment.nvim',  opts = {} },
+}

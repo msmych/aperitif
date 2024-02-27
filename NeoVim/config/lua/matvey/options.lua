@@ -4,13 +4,17 @@ vim.o.relativenumber = true
 
 -- Update time
 vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 600
 
 -- Enable mouse
 vim.o.mouse = 'a'
 
 -- Synchronize clipboards
 vim.o.clipboard = 'unnamedplus'
+
+-- Go to new split window
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Indents
 vim.opt.tabstop = 2

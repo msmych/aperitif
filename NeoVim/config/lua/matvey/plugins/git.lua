@@ -31,6 +31,17 @@ return {
         end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
 
         vim.keymap.set('n', '<leader>z', gs.reset_buffer, { buffer = bufnr, desc = 'Git reset buffer' })
+
+        local hl_groups = {
+           'GitSignsAdd',
+           'GitSignsChange',
+           'GitSignsDelete',
+           'GitSignsTopdelete',
+           'GitSignsChangedelete',
+        }
+        for _, hl_group in ipairs(hl_groups) do
+          vim.api.nvim_command("highlight " .. hl_group .. " guibg=none")
+        end
       end
     }
   },

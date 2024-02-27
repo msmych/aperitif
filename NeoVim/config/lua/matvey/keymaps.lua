@@ -19,9 +19,13 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 
 -- Errors
-vim.keymap.set('n', ']e', vim.diagnostic.goto_next, { desc = 'Go to next error' })
-vim.keymap.set('n', '[e', vim.diagnostic.goto_prev, { desc = 'Go to previous error' })
+vim.keymap.set('n', '<F2>', vim.diagnostic.goto_next, { desc = 'Go to next error' })
+vim.keymap.set('n', '<F14>', vim.diagnostic.goto_prev, { desc = 'Go to previous error' })
 vim.keymap.set('n', '<leader><F1>', vim.diagnostic.open_float, { desc = 'Show error message' })
+
+-- Git
+vim.keymap.set('n', '<leader>gh', ':diffget //2<CR>', { desc = 'Git get left' })
+vim.keymap.set('n', '<leader>gl', ':diffget //3<CR>', { desc = 'Git get right' })
 
 -- <C-c> is more convenient than <Esc>
 vim.keymap.set('i', '<C-c>', '<Esc>')

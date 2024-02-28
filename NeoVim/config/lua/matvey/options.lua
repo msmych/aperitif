@@ -12,10 +12,6 @@ vim.o.mouse = 'a'
 -- Synchronize clipboards
 vim.o.clipboard = 'unnamedplus'
 
--- Go to new split window
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
 -- Indents
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

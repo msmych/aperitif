@@ -5,8 +5,10 @@ return {
     config = function()
       require 'nvim-treesitter.configs'.setup {
         ensure_installed = {
+          "bash",
           "c",
           "lua",
+          "markdown",
           "query",
           "vim",
           "vimdoc",
@@ -20,5 +22,5 @@ return {
         indent = { enable = true },
       }
     end,
-  }
+  },
 }

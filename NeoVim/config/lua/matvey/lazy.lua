@@ -15,5 +15,6 @@ require('lazy').setup {
 
   { import = 'matvey.plugins' },
 
+  'mbbill/undotree',
   { 'numToStr/Comment.nvim',  opts = {} },
 }

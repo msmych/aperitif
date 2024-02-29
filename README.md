@@ -1,3 +1,5 @@
 # Apéritif
 
-## NeoVim
+## Neovim
+
+## IntelliJ

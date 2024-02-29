@@ -1,0 +1,30 @@
+set number
+set relativenumber
+
+set visualbell
+set noerrorbells
+
+set scrolloff=8
+
+set highlightedyank
+
+let g:mapleader=" "
+
+nmap <Space> <Nop>
+vmap <Space> <Nop>
+
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+nmap <C-f> <C-f>zz
+nmap <C-b> <C-b>zz
+
+nmap n nzzzv
+nmap N Nzzzv
+
+vmap K :m '<-2<CR>gv=gv
+vmap J :m '<+1<CR>gv=gv
+
+xmap <leader>p \"_dP
+
+imap <C-c> <Esc>
+

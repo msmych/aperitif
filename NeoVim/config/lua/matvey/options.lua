@@ -38,6 +38,9 @@ vim.opt.scrolloff = 8
 -- Show command
 vim.opt.showcmd = true
 
+-- Don't show mode
+vim.opt.showmode = false
+
 -- No swapfile, no backup, use undo
 vim.opt.swapfile = false
 vim.opt.backup = false

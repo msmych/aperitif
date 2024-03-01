@@ -17,4 +17,5 @@ require('lazy').setup {
 
   'mbbill/undotree',
   { 'numToStr/Comment.nvim',  opts = {} },
+  'github/copilot.vim',
 }

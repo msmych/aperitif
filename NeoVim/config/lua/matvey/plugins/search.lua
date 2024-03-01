@@ -27,7 +27,6 @@ return {
         },
         pickers = {
           buffers = {
-            initial_mode = 'normal',
             mappings = {
               n = {
                 ['d'] = require("telescope.actions").delete_buffer
@@ -41,7 +40,6 @@ return {
             path = '%:p:h',
             select_buffer = true,
             hijack_netrw = true,
-            initial_mode = 'normal',
           },
           ['ui-select'] = {
             require('telescope.themes').get_dropdown()

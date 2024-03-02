@@ -17,8 +17,21 @@ return {
     },
     config = function()
       local telescope = require('telescope')
+
+      local themes = require('telescope.themes')
+
       telescope.setup {
         defaults = {
+          layout_strategy = 'flex',
+          layout_config = {
+            horizontal = {
+              prompt_position = 'top',
+            },
+            center = {
+              mirror = true,
+            },
+          },
+          sorting_strategy = 'ascending',
           mappings = {
             i = {
             },
@@ -43,7 +56,7 @@ return {
             hijack_netrw = true,
           },
           ['ui-select'] = {
-            require('telescope.themes').get_dropdown()
+            themes.get_dropdown()
           },
         }
       }
@@ -61,7 +74,9 @@ return {
 
       vim.keymap.set('n', '<F13>', builtin.help_tags, { desc = 'Search help' })
       vim.keymap.set('n', '<leader><Tab>', builtin.buffers, { desc = 'Search buffers' })
-      vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current buffer' })
+      vim.keymap.set('n', '<leader>/', function()
+        builtin.current_buffer_fuzzy_find(themes.get_dropdown())
+      end, { desc = 'Search in current buffer' })
       vim.keymap.set('n', '<leader>?', function()
         builtin.live_grep { grep_open_files = true, prompt_title = 'Search in open files' }
       end, { desc = 'Search in open files' })

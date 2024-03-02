@@ -7,5 +7,15 @@ return {
       require('mini.statusline').setup()
       require('mini.tabline').setup()
     end
+  },
+  {
+    'michaelrommel/nvim-silicon',
+    lazy = true,
+    cmd = 'Silicon',
+    config = function()
+      require('silicon').setup {
+        font = 'Hack'
+      }
+    end
   }
 }

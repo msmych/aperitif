@@ -2,7 +2,7 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = 'Close current buffer' })
-vim.keymap.set('n', '<leader>Q', ':qa<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>Q', ':qa!<CR>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Write' })
 
 vim.keymap.set('n', '<leader><right>', '<C-w>6>', { desc = '[+] Window width' })

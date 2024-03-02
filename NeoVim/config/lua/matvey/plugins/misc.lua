@@ -4,8 +4,12 @@ return {
     config = function()
       require('mini.ai').setup()
       require('mini.surround').setup()
-      require('mini.statusline').setup()
-      require('mini.tabline').setup()
+      require('mini.statusline').setup {
+        use_icons = false,
+      }
+      require('mini.tabline').setup {
+        use_icons = false,
+      }
     end
   },
   {

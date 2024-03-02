@@ -5,6 +5,9 @@ vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>Q', ':qa!<CR>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Write' })
 
+vim.keymap.set('n', ']b', ':bn<CR>', { desc = 'Go to next buffer' })
+vim.keymap.set('n', '[b', ':bp<CR>', { desc = 'Go to previous buffer' })
+
 vim.keymap.set('n', '<leader><right>', '<C-w>6>', { desc = '[+] Window width' })
 vim.keymap.set('n', '<leader><left>', '<C-w>6<', { desc = '[-] Window width' })
 vim.keymap.set('n', '<leader><up>', '<C-w>4+', { desc = '[+] Window height' })

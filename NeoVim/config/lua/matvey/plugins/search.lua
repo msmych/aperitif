@@ -13,6 +13,7 @@ return {
       },
       'nvim-telescope/telescope-file-browser.nvim',
       'nvim-telescope/telescope-ui-select.nvim',
+      'nvim-telescope/telescope-dap.nvim',
     },
     config = function()
       local telescope = require('telescope')
@@ -50,9 +51,11 @@ return {
       telescope.load_extension('fzf')
       telescope.load_extension('file_browser')
       telescope.load_extension('ui-select')
+      telescope.load_extension('dap')
 
       local builtin = require('telescope.builtin')
       local file_browser = telescope.extensions.file_browser
+      local dap = telescope.extensions.dap
 
       local utils = require('matvey.utils')
 
@@ -64,6 +67,7 @@ return {
       end, { desc = 'Search in open files' })
       vim.keymap.set('n', '<leader>1', file_browser.file_browser, { desc = 'Open file browser' })
       vim.keymap.set('n', '<leader>2', builtin.marks, { desc = 'Search marks' })
+      vim.keymap.set('n', '<leader>@', dap.list_breakpoints, { desc = 'Search breakpoints' })
       vim.keymap.set('n', '<leader>3', builtin.builtin, { desc = 'Open search' })
       vim.keymap.set('n', '<leader>^', builtin.diagnostics, { desc = 'Search errors' })
       vim.keymap.set('n', '<leader>9', builtin.git_commits, { desc = 'Search Git commits' })

@@ -1,6 +1,6 @@
 require('matvey.keymaps')
 require('matvey.options')
-require('matvey.theme')
+require('matvey.colors')
 require('matvey.netrw')
 
 require('matvey.lazy')

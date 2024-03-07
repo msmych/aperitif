@@ -27,6 +27,10 @@ return {
             horizontal = {
               prompt_position = 'top',
             },
+            vertical = {
+              prompt_position = 'top',
+              mirror = true,
+            },
             center = {
               mirror = true,
             },
@@ -103,13 +107,13 @@ return {
         }
       end, { desc = 'Search files in Git root' })
       vim.keymap.set('n', '<leader>e', builtin.oldfiles, { desc = 'Search old files' })
-      vim.keymap.set('n', '<leader>f', builtin.live_grep, { desc = 'Search by grep' })
-      vim.keymap.set('n', '<leader>F', function()
+      vim.keymap.set('n', '<leader>f', function()
         builtin.grep_string {
           search = vim.fn.input('Search: '),
           prompt_title = 'Search by grep',
         }
       end, { desc = 'Search by grep' })
+      vim.keymap.set('n', '<leader>F', builtin.live_grep, { desc = 'Search by grep' })
       vim.keymap.set('n', '<leader><space>', function()
         builtin.find_files {
           cwd = utils.find_git_root(),

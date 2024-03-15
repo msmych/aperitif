@@ -29,12 +29,12 @@ M.setup_lsp = function(client, bufnr)
 
   local telescope = require 'telescope.builtin'
 
-  vim.keymap.set('n', '<leader><F12>', telescope.lsp_document_symbols, { buffer = bufnr, desc = 'LSP: document symbols' })
   vim.keymap.set('n', 'gd', telescope.lsp_definitions, { buffer = bufnr, desc = 'LSP: go to definition' })
   vim.keymap.set('n', 'gD', telescope.lsp_type_definitions, { buffer = bufnr, desc = 'LSP: go to type' })
   vim.keymap.set('n', 'gu', telescope.lsp_references, { buffer = bufnr, desc = 'LSP: search references' })
   vim.keymap.set('n', 'gU', telescope.lsp_implementations, { buffer = bufnr, desc = 'LSP: search implementations' })
-  vim.keymap.set('n', '<leader>so', telescope.lsp_dynamic_workspace_symbols,
+  vim.keymap.set('n', '<leader>7', telescope.lsp_document_symbols, { buffer = bufnr, desc = 'LSP: document symbols' })
+  vim.keymap.set('n', '<leader>&', telescope.lsp_dynamic_workspace_symbols,
     { buffer = bufnr, desc = 'LSP: search symbols' })
 
   if client and client.server_capabilities.documentHighlightProvider then

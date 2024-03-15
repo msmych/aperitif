@@ -23,7 +23,16 @@ return {
               { remap = false, buffer = bufnr, desc = 'Rust: re-test' })
             vim.keymap.set('n', '<leader>tR', function() vim.cmd.RustLsp('testables') end,
               { remap = false, buffer = bufnr, desc = 'Rust: test' })
-          end
+          end,
+          default_settings = {
+            ['rust-analyzer'] = {
+              cargo = {
+                features = { 'ssr' },
+              },
+              diagnostics = {
+              }
+            },
+          }
         },
       }
     end

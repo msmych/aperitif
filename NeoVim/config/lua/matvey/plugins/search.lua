@@ -54,6 +54,7 @@ return {
         },
         extensions = {
           file_browser = {
+            hidden = true,
             theme = 'ivy',
             path = '%:p:h',
             select_buffer = true,

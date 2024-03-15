@@ -8,6 +8,8 @@ set scrolloff=8
 
 set highlightedyank
 
+set clipboard=unnamedplus
+
 let g:mapleader=" "
 
 nmap <Space> <Nop>

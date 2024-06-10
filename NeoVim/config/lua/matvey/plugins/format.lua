@@ -12,6 +12,7 @@ return {
         javascriptreact = { { 'prettier' } },
         typescript = { { 'prettier' } },
         typescriptreact = { { 'prettier' } },
+        json = { { 'jq' } },
       }
     },
   }

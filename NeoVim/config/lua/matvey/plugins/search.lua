@@ -59,6 +59,7 @@ return {
             path = '%:p:h',
             select_buffer = true,
             hijack_netrw = true,
+            dir_icon = '',
           },
           ['ui-select'] = {
             themes.get_dropdown()

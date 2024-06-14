@@ -8,6 +8,11 @@ set scrolloff=8
 
 set highlightedyank
 
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 set clipboard=unnamedplus
 
 let g:mapleader=" "
@@ -29,4 +34,3 @@ vmap J :m '<+1<CR>gv=gv
 xmap <leader>p \"_dP
 
 imap <C-c> <Esc>
-
